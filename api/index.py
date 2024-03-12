@@ -19,7 +19,7 @@ def search_words(pattern, word_list):
         if len(word) == len(pattern):
             match = True
             for i in range(len(pattern)):
-                if pattern[i] != '_' and pattern[i].lower() != word[i].lower():
+                if pattern[i] != '?' and pattern[i].lower() != word[i].lower():
                     match = False
                     break
             if match:
