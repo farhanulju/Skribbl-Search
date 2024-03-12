@@ -1,8 +1,9 @@
 from flask import Flask, render_template, request
-import csv
 from datetime import datetime
+import os
+import csv
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='../templates')
 
 def load_words_from_csv(file_path):
     words = []
