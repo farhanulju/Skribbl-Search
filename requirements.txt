@@ -1,2 +1,2 @@
 flask==3.0.0
-datetime=5.4
+datetime==5.4
