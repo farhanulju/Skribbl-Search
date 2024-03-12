@@ -1,0 +1,9 @@
+{% if results %}
+    <ul>
+    {% for word in results %}
+        <li>{{ word }}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No matching words found.</p>
+{% endif %}

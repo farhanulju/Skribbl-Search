@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Word Search</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .search-container {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .search-input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+        }
+        .search-results {
+            margin-top: 20px;
+        }
+        .search-results ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .search-results li {
+            background-color: #f9f9f9;
+            padding: 10px;
+            margin-bottom: 5px;
+            border-radius: 4px;
+        }
+        .letter-count {
+            text-align: right;
+            margin-top: 5px;
+            font-size: 14px;
+            color: #888;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            font-size: 14px;
+            color: #888;
+        }
+        footer a {
+            color: #888;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+        <script>
+            $(document).ready(function() {
+                var timer = null;
+                $('#search-input').on('input', function() {
+                    var searchPattern = $(this).val();
+                    var letterCount = searchPattern.length;
+                    $('#letter-count').text(letterCount + ' letters (includes spaces)');
+    
+                    clearTimeout(timer);
+                    timer = setTimeout(function() {
+                        $.ajax({
+                            url: '/search',
+                            method: 'POST',
+                            data: { search_pattern: searchPattern },
+                            success: function(response) {
+                                $('#search-results').html(response);
+                            }
+                        });
+                    }, 300);
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="search-container">
+            <h1>Skribl Word Search</h1>
+            <input type="text" id="search-input" class="search-input" placeholder="Use _ for unknown letters">
+            <div class="letter-count" id="letter-count">0 letters</div>
+            <div id="search-results" class="search-results"></div>
+        </div>
+        <footer>
+            Last updated: {{ last_updated }}<br>           
+            <a href="https://github.com/farhanulju/Skribbl-Search/issues" target="_blank">Submit issues</a>
+        </footer>
+    </body>
+    </html>
