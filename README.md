@@ -14,15 +14,15 @@ A skribbl.io word search completion tool to guess words quickly based on hints. 
 
 1. Clone the repository:
    ```
-   git clone https://github.com/your-username/skribbl-word-search.git
+   git clone https://github.com/farhanulju/Skribbl-Search.git
    ```
 
 2. Navigate to the project directory:
    ```
-   cd skribbl-word-search
+   cd Skribbl-Search
    ```
 
-3. Open the `index.html` file in your web browser.
+3. Open the `index.py` file in your web browser.
 
 ## Usage
 
@@ -38,7 +38,7 @@ A skribbl.io word search completion tool to guess words quickly based on hints. 
 
 ## Contributing
 
-Contributions are welcome! If you find any issues or have suggestions for improvement, please open an issue or submit a pull request.
+Contributions are welcomed! If you find any issues or have suggestions for improvement, please open an issue or submit a pull request.
 
 1. Fork the repository.
 
