@@ -28,7 +28,7 @@ A skribbl.io word search completion tool to guess words quickly based on hints. 
 
 1. Open the skribbl.io word search completion tool in your web browser.
 
-2. Enter the partial word pattern in the search input field. Use underscore (`_`) as a placeholder for unknown letters.
+2. Enter the partial word pattern in the search input field. Use underscore (`?`) as a placeholder for unknown letters.
 
 3. As you type, the tool will display real-time search results matching the entered pattern.
 
