@@ -5,7 +5,7 @@ A skribbl.io word search completion tool to guess words quickly based on hints. 
 ## Features
 
 - Search for words based on partial patterns
-- Use underscore (`_`) as a placeholder for unknown letters
+- Use underscore (`?`) as a placeholder for unknown letters
 - Real-time search results as you type
 - Displays the number of letters in the search pattern
 - Responsive and user-friendly interface
